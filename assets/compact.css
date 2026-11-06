@@ -18,6 +18,10 @@ body { line-height: 1.48; }
 .brand-mark { transform: scale(.88); }
 .site-header nav { gap: clamp(.75rem, 1.8vw, 1.65rem); }
 .site-header nav a { font-size: .97rem; padding: .45rem 0; }
+.site-nav { gap: clamp(.8rem, 1.65vw, 1.45rem); }
+.site-nav > a:not(.nav-github) { padding-block: 1rem; }
+.site-nav > a:not(.nav-github)::after { bottom: .55rem; }
+.nav-github { padding: .45rem .75rem; }
 .header-actions { gap: .65rem; }
 .theme-toggle, .repo-link { min-height: 38px; padding: .5rem .85rem; font-size: .9rem; }
 
@@ -89,13 +93,15 @@ p { margin: 0 0 .85rem; }
 .feature-card,
 .guide-card,
 .privacy-cards article,
+.privacy-summary > div,
 .feature-detail img,
 .repo-link,
 .theme-toggle { transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease; }
 
 .feature-card:hover,
 .guide-card:hover,
-.privacy-cards article:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(22, 72, 118, .12); }
+.privacy-cards article:hover,
+.privacy-summary > div:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(22, 72, 118, .12); }
 
 .repo-link:hover,
 .theme-toggle:hover { transform: translateY(-1px); }
@@ -103,7 +109,8 @@ p { margin: 0 0 .85rem; }
 main > section,
 .feature-card,
 .guide-card,
-.privacy-cards article {
+.privacy-cards article,
+.privacy-summary > div {
   animation: compact-reveal 420ms ease both;
 }
 

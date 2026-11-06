@@ -1,39 +1,90 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Lightning Craft privacy policy">
-  <title>Privacy | Lightning Craft</title>
-  <link rel="stylesheet" href="assets/styles.css">
-</head>
-<body data-page="privacy">
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Lightning Craft home"><span class="brand-mark">⚡</span><span>Lightning <strong>Craft</strong></span></a>
-    <nav aria-label="Primary navigation"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="support.html">Guide &amp; support</a><a class="active" href="privacy.html">Privacy</a><a href="version-history.html">Version History</a></nav>
-    <div class="header-actions"><button class="theme-toggle" type="button" aria-label="Toggle color theme">☾ Midnight</button><a class="repo-link" href="https://github.com/kumarvikky/Lightning_Craft" target="_blank" rel="noreferrer">Documentation repo ↗</a></div>
-  </header>
-  <main>
-    <section class="page-hero privacy-hero">
-      <p class="eyebrow">Privacy policy</p>
-      <h1>Your Salesforce work stays<br><em>under your control.</em></h1>
-      <p>Lightning Craft works with the Salesforce session already active in your browser.<br>It does not require a separate Salesforce password or API token.</p>
-      <p><strong>Last updated: November 6, 2026</strong></p>
-    </section>
-    <section class="policy-layout" aria-label="Privacy policy details">
-      <aside class="policy-nav"><p>ON THIS PAGE</p><a href="#overview">Overview</a><a href="#information">Information handled</a><a href="#use">How it is used</a><a href="#storage">Local storage</a><a href="#permissions">Permissions</a><a href="#uninstall">Uninstall feedback</a><a href="#choices">Your choices</a></aside>
-      <div class="policy-content">
-        <section id="overview"><p class="eyebrow">Overview</p><h2>Designed for your active Salesforce context.</h2><div class="privacy-cards"><article><h3>Uses your active session</h3><p>Salesforce requests use the signed-in browser session for the org you are working in.</p></article><article><h3>Local workspace storage</h3><p>Preferences, saved work, backups, and tool history stay in your browser unless you explicitly send a request.</p></article><article><h3>No advertising or sale</h3><p>Lightning Craft does not sell Salesforce data or use it for advertising or behavioral profiling.</p></article></div></section>
-        <section id="information"><p class="eyebrow">Information handled</p><h2>What the extension can access.</h2><p>The extension handles only the information needed to provide the feature you initiate, including:</p><ul><li>Your Salesforce session cookie (<code>sid</code>) so requests can be authenticated with the org already open in your browser.</li><li>Salesforce data and metadata returned for actions you request: object and field definitions, records, SOQL results, deployment details, source files, REST responses, and debug logs.</li><li>Content you explicitly provide, such as CSV, Excel, ZIP packages, pasted records, JSON, Apex/SOQL, debug logs, and metadata selections.</li><li>Saved REST request details, such as endpoint, method, parameters, non-sensitive headers, and request body. <code>Authorization</code>, <code>Proxy-Authorization</code>, <code>X-API-Key</code>, and <code>Cookie</code> headers are excluded from saved request shapes.</li><li>Workspace preferences and locally saved tool state, such as recent queries, mappings, editor settings, and selected UI options.</li></ul></section>
-        <section id="use"><p class="eyebrow">How it is used</p><h2>Requests go where you direct them.</h2><p>Salesforce data is sent to your connected Salesforce org only when you use an extension feature that makes that request. REST Explorer can also call an external HTTPS endpoint only after you enter or select that endpoint and approve the optional site permission. Plain HTTP endpoints are rejected.</p><p>The extension does not run a general remote proxy for your Salesforce data, and it does not use your content for advertising, profiling, or sale.</p></section>
-        <section id="storage"><p class="eyebrow">Local storage</p><h2>Workspace data is stored in your browser.</h2><p>Lightning Craft uses Chrome local extension storage, browser local/session storage, and IndexedDB to preserve the workspace features you choose to use. This can include saved queries, import mappings, request shapes, editor preferences, local files, debug analyzer workspaces, and raw debug-log text.</p><p>Metadata Import may keep a local IndexedDB backup of a ZIP deployment snapshot so you can restore it during the import workflow. Those backups are pruned after 24 hours, and obsolete backups are removed.</p><p>Storage is scoped to your browser profile and is not automatically synchronized by Lightning Craft to an external Lightning Craft service. You can remove saved items through the relevant workspace controls or clear the extension's site/extension data in Chrome.</p></section>
-        <section id="permissions"><p class="eyebrow">Permissions</p><h2>Why the extension asks for access.</h2><div class="permission-table" role="table" aria-label="Extension permissions"><div role="row" class="permission-row permission-head"><span role="columnheader">Permission</span><span role="columnheader">Purpose</span></div><div role="row" class="permission-row"><span role="cell">Cookies</span><span role="cell">Read the Salesforce session cookie needed for authenticated requests to the org you are already signed in to.</span></div><div role="row" class="permission-row"><span role="cell">Storage</span><span role="cell">Save local preferences, workspace state, histories, mappings, and backups.</span></div><div role="row" class="permission-row"><span role="cell">Tabs</span><span role="cell">Recognize the active Salesforce context and open Lightning Craft tools from that context.</span></div><div role="row" class="permission-row"><span role="cell">Clipboard write</span><span role="cell">Copy results, JSON, generated snippets, logs, and other content when you click a copy action.</span></div><div role="row" class="permission-row"><span role="cell">Salesforce sites</span><span role="cell">Call supported Salesforce domains for the data, metadata, deployment, console, and REST features you select.</span></div><div role="row" class="permission-row"><span role="cell">Optional HTTPS sites</span><span role="cell">Requested only when you choose an external REST Explorer endpoint; you approve that origin before the request is made.</span></div></div></section>
-        <section id="uninstall"><p class="eyebrow">Uninstall feedback</p><h2>Feedback is optional.</h2><p>When Lightning Craft is uninstalled, Chrome opens a Google Form where you may optionally provide feedback. The extension does not automatically send Salesforce data, extension storage, or other personal information to that form. Any information you choose to submit is provided to Google through the form and is subject to Google's applicable policies.</p></section>
-        <section id="choices"><p class="eyebrow">Your choices</p><h2>You control each action.</h2><ul><li>Use only the Salesforce features and external endpoints you choose.</li><li>Review and remove saved queries, mappings, request shapes, files, and backups from the relevant tools.</li><li>Clear Lightning Craft storage from Chrome's extension/site data controls.</li><li>Contact the project maintainer through the documentation repository for privacy questions or corrections.</li></ul></section>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer"><div><a class="brand" href="index.html"><span class="brand-mark">⚡</span><span>Lightning <strong>Craft</strong></span></a><p>Focused Salesforce workflows, close to the context where work happens.</p></div><div class="footer-links"><a href="features.html">Features</a><a href="support.html">Guide &amp; support</a><a href="privacy.html">Privacy</a><a href="version-history.html">Version history</a></div></footer>
-  <script src="assets/site.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Lightning Craft privacy policy and Chrome extension permissions.">
+    <meta name="theme-color" content="#071b38">
+    <title>Privacy | Lightning Craft</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/compact.css">
+  </head>
+  <body data-page="privacy">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Lightning Craft home"><span class="brand-mark" aria-hidden="true">ϟ</span><span>Lightning <b>Craft</b></span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Open menu</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Overview</a><a href="features.html">Features</a><a href="support.html">Guide &amp; support</a><a href="privacy.html" aria-current="page">Privacy</a><a href="version-history.html">Version History</a><a class="nav-github" href="https://github.com/KumarVikky/Lightning_Craft_Extension" target="_blank" rel="noreferrer">Documentation repo <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="policy-hero">
+        <p class="eyebrow">Privacy policy</p>
+        <h1>Your Salesforce work stays<br><em>under your control.</em></h1>
+        <p>Lightning Craft works with the Salesforce session already active in your browser.<br>It does not require a separate Salesforce password or API token.</p>
+        <p class="policy-date">Last updated: November 7, 2026</p>
+      </section>
+
+      <section class="policy-layout" aria-label="Privacy policy details">
+        <nav class="policy-nav" aria-label="Privacy policy sections">
+          <a href="#overview">Overview</a><a href="#information">Information handled</a><a href="#use">How it is used</a><a href="#storage">Local storage</a><a href="#permissions">Permissions</a><a href="#uninstall">Uninstall feedback</a><a href="#choices">Your choices</a>
+        </nav>
+        <div class="policy-content">
+          <section id="overview">
+            <p class="section-label">Overview</p><h2>Designed for your active Salesforce context.</h2>
+            <div class="privacy-summary">
+              <div><span aria-hidden="true">●</span><h3>Uses your active session</h3><p>Salesforce requests use the signed-in browser session for the org you are working in.</p></div>
+              <div><span aria-hidden="true">⌁</span><h3>Local workspace storage</h3><p>Preferences, saved work, backups, and tool history stay in your browser unless you explicitly send a request.</p></div>
+              <div><span aria-hidden="true">✓</span><h3>No advertising or sale</h3><p>Lightning Craft does not sell Salesforce data or use it for advertising or behavioral profiling.</p></div>
+            </div>
+          </section>
+
+          <section id="information">
+            <p class="section-label">Information handled</p><h2>What the extension can access.</h2>
+            <p>The extension handles only the information needed to provide the feature you initiate, including:</p>
+            <ul>
+              <li>Your Salesforce session cookie (<code>sid</code>) so requests can be authenticated with the org already open in your browser.</li>
+              <li>Salesforce data and metadata returned for actions you request: object and field definitions, records, SOQL results, deployment details, source files, REST responses, and debug logs.</li>
+              <li>Content you explicitly provide, such as CSV, Excel, ZIP packages, pasted records, JSON, Apex/SOQL, debug logs, and metadata selections.</li>
+              <li>Saved REST request details, such as endpoint, method, parameters, non-sensitive headers, and request body. <code>Authorization</code>, <code>Proxy-Authorization</code>, <code>X-API-Key</code>, and <code>Cookie</code> headers are excluded from saved request shapes.</li>
+              <li>Workspace preferences and locally saved tool state, such as recent queries, mappings, editor settings, and selected UI options.</li>
+            </ul>
+          </section>
+
+          <section id="use">
+            <p class="section-label">How it is used</p><h2>Requests go where you direct them.</h2>
+            <p>Salesforce data is sent to your connected Salesforce org only when you use an extension feature that makes that request. REST Explorer can also call an external HTTPS endpoint only after you enter or select that endpoint and approve the optional site permission. Plain HTTP endpoints are rejected.</p>
+            <p>The extension does not run a general remote proxy for your Salesforce data, and it does not use your content for advertising, profiling, or sale.</p>
+          </section>
+
+          <section id="storage">
+            <p class="section-label">Local storage</p><h2>Workspace data is stored in your browser.</h2>
+            <p>Lightning Craft uses Chrome local extension storage, browser local/session storage, and IndexedDB to preserve the workspace features you choose to use. This can include saved queries, import mappings, request shapes, editor preferences, local files, debug analyzer workspaces, and raw debug-log text.</p>
+            <p>Metadata Import may keep a local IndexedDB backup of a ZIP deployment snapshot so you can restore it during the import workflow. Those backups are pruned after 24 hours, and obsolete backups are removed.</p>
+            <p>Storage is scoped to your browser profile and is not automatically synchronized by Lightning Craft to an external Lightning Craft service. You can remove saved items through the relevant workspace controls or clear the extension's site/extension data in Chrome.</p>
+          </section>
+
+          <section id="permissions">
+            <p class="section-label">Permissions</p><h2>Why the extension asks for access.</h2>
+            <div class="permission-table"><table><thead><tr><th scope="col">Permission</th><th scope="col">Purpose</th></tr></thead><tbody>
+              <tr><th scope="row">Cookies</th><td>Read the Salesforce session cookie needed for authenticated requests to the org you are already signed in to.</td></tr>
+              <tr><th scope="row">Storage</th><td>Save local preferences, workspace state, histories, mappings, and backups.</td></tr>
+              <tr><th scope="row">Tabs</th><td>Recognize the active Salesforce context and open Lightning Craft tools from that context.</td></tr>
+              <tr><th scope="row">Clipboard write</th><td>Copy results, JSON, generated snippets, logs, and other content when you click a copy action.</td></tr>
+              <tr><th scope="row">Salesforce sites</th><td>Call supported Salesforce domains for the data, metadata, deployment, console, and REST features you select.</td></tr>
+              <tr><th scope="row">Optional HTTPS sites</th><td>Requested only when you choose an external REST Explorer endpoint; you approve that origin before the request is made.</td></tr>
+            </tbody></table></div>
+          </section>
+
+          <section id="uninstall"><p class="section-label">Uninstall feedback</p><h2>Feedback is optional.</h2><p>When Lightning Craft is uninstalled, Chrome opens a Google Form where you may optionally provide feedback. The extension does not automatically send Salesforce data, extension storage, or other personal information to that form. Any information you choose to submit is provided to Google through the form and is subject to Google's applicable policies.</p></section>
+          <section id="choices"><p class="section-label">Your choices</p><h2>You control each action.</h2><ul><li>Use only the Salesforce features and external endpoints you choose.</li><li>Review and remove saved queries, mappings, request shapes, files, and backups from the relevant tools.</li><li>Clear Lightning Craft storage from Chrome's extension/site data controls.</li><li>Contact the project maintainer through the documentation repository for privacy questions or corrections.</li></ul></section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-brand"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">ϟ</span><span>Lightning <b>Craft</b></span></a><p>A focused Salesforce workspace for data, metadata, and developer tasks.</p></div><div class="footer-links"><div><b>Product</b><a href="features.html">Features</a><a href="support.html#install">Installation</a><a href="support.html">Support</a><a href="https://github.com/KumarVikky/Lightning_Craft_Extension/issues" target="_blank" rel="noreferrer">Report a bug ↗</a></div><div><b>Trust</b><a href="privacy.html">Privacy policy</a><a href="#permissions">Permissions</a><a href="https://github.com/KumarVikky/Lightning_Craft_Extension" target="_blank" rel="noreferrer">Documentation repo ↗</a></div></div><div class="footer-bottom"><span>© <span data-current-year></span> Lightning Craft</span><span>Built for Salesforce teams</span></div></footer>
+    <script src="assets/site.js"></script>
+  </body>
 </html>

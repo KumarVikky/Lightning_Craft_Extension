@@ -1,10 +1,12 @@
 (() => {
   const documentationRepo = 'https://github.com/KumarVikky/Lightning_Craft_Extension';
   const issuesUrl = `${documentationRepo}/issues`;
-const compactStylesheet = document.createElement('link');
-compactStylesheet.rel = 'stylesheet';
-compactStylesheet.href = 'assets/compact.css';
-document.head.append(compactStylesheet);
+if (!document.querySelector('link[href="assets/compact.css"]')) {
+  const compactStylesheet = document.createElement('link');
+  compactStylesheet.rel = 'stylesheet';
+  compactStylesheet.href = 'assets/compact.css';
+  document.head.append(compactStylesheet);
+}
 
 const cleanRoutes = {
     'index.html': './',
