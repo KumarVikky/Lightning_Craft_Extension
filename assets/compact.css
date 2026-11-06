@@ -52,6 +52,9 @@ p { margin: 0 0 .85rem; }
 .guide-cards,
 .privacy-cards { gap: clamp(.85rem, 1.7vw, 1.3rem); }
 
+/* Keep the Overview supporting copy vertically centered with the feature heading. */
+.split-heading { align-items: center; }
+
 .feature-card,
 .guide-card,
 .privacy-cards article,
