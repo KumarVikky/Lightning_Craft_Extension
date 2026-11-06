@@ -34,14 +34,28 @@
       <section class="version-section contrast-section" aria-label="Release highlights">
         <div class="version-layout">
           <nav class="version-tabs" role="tablist" aria-label="Choose a version" aria-orientation="vertical">
-            <button class="version-tab" id="version-tab-1-1" type="button" role="tab" aria-controls="version-panel-1-1" aria-selected="true" tabindex="0" data-version="v1.1"><span class="version-tab-number">v1.1</span><span class="version-tab-label">Latest release</span></button>
+            <button class="version-tab" id="version-tab-1-2" type="button" role="tab" aria-controls="version-panel-1-2" aria-selected="true" tabindex="0" data-version="v1.2"><span class="version-tab-number">v1.2</span><span class="version-tab-label">Latest release</span></button>
+            <button class="version-tab" id="version-tab-1-1" type="button" role="tab" aria-controls="version-panel-1-1" aria-selected="false" tabindex="-1" data-version="v1.1"><span class="version-tab-number">v1.1</span><span class="version-tab-label">Previous release</span></button>
             <button class="version-tab" id="version-tab-1-0" type="button" role="tab" aria-controls="version-panel-1-0" aria-selected="false" tabindex="-1" data-version="v1.0"><span class="version-tab-number">v1.0</span><span class="version-tab-label">Initial release</span></button>
           </nav>
 
           <div class="version-panels">
-            <article class="version-panel" id="version-panel-1-1" role="tabpanel" aria-labelledby="version-tab-1-1" tabindex="0">
+            <article class="version-panel" id="version-panel-1-2" role="tabpanel" aria-labelledby="version-tab-1-2" tabindex="0">
+              <div class="version-panel-heading"><p class="section-label">Latest release · v1.2</p><h2>A broader Salesforce workspace.</h2><p>Version 1.2 adds metadata deployment, REST exploration, richer query building, deployment clarity, and new developer tools while refining the workflows already in use.</p></div>
+              <div class="version-highlights">
+                <section class="version-highlight"><span class="version-highlight-number">01</span><div><h3>Metadata Import and deployment controls</h3><p>Stage Metadata API ZIP packages, review package contents, choose deployment options, validate first, deploy to Salesforce, and use Quick Deploy when a validation is eligible.</p></div></section>
+                <section class="version-highlight"><span class="version-highlight-number">02</span><div><h3>Clear deployment history</h3><p>Deployment views show this org’s recent activity, component outcomes, test results, errors, and whether a request is validating, deploying, or still in progress.</p></div></section>
+                <section class="version-highlight"><span class="version-highlight-number">03</span><div><h3>Relationship-aware Data Export</h3><p>Build SOQL with parent and child relationship suggestions, subquery support, cursor-aware field insertion, a resizable relationship browser, Tooling API queries, and up to 12 field chips.</p></div></section>
+                <section class="version-highlight"><span class="version-highlight-number">04</span><div><h3>Richer metadata retrieval</h3><p>Metadata Export gains clearer retrieval activity, dependency views, generated package.xml, and polished retrieval logs.</p></div></section>
+                <section class="version-highlight"><span class="version-highlight-number">05</span><div><h3>REST Explorer</h3><p>Call Salesforce REST resources or approved external HTTPS endpoints, configure parameters, headers, and JSON bodies, inspect formatted responses, and copy or download results.</p></div></section>
+                <section class="version-highlight"><span class="version-highlight-number">06</span><div><h3>Developer Console additions</h3><p>Use a JSON parser with an interactive tree and Apex wrapper generation, copy SOQL result JSON, and access an expanded set of Console workflows.</p></div></section>
+                <section class="version-highlight"><span class="version-highlight-number">07</span><div><h3>Data Import mapping refinement</h3><p>Review an existing mapping without disruption, then choose Update Mapping to expose every mapped column and replace its Salesforce field deliberately.</p></div></section>
+                <section class="version-highlight"><span class="version-highlight-number">08</span><div><h3>Focused UI fixes</h3><p>Improved text sizing, matching controls, responsive panels, loading copy, and clearer status language make the workspace easier to scan.</p></div></section>
+              </div>
+            </article>
+            <article class="version-panel" id="version-panel-1-1" role="tabpanel" aria-labelledby="version-tab-1-1" tabindex="0" hidden>
               <div class="version-panel-heading">
-                <p class="section-label">Latest release · v1.1</p>
+                <p class="section-label">Previous release · v1.1</p>
                 <h2>More polished, more consistent.</h2>
                 <p>Lightning Craft v1.1 refines the workspace and the tools you use every day, with improvements to component creation, editing, navigation, and Salesforce access.</p>
               </div>
@@ -94,7 +108,7 @@
                 </section>
                 <section class="version-highlight">
                   <span class="version-highlight-number">05</span>
-                  <div><h3>Download Metadata</h3><p>Discover metadata types, select components, review dependencies, generate package.xml, and download Metadata API ZIP packages.</p></div>
+                  <div><h3>Metadata Export</h3><p>Discover metadata types, select components, review dependencies, generate package.xml, and export Metadata API ZIP packages.</p></div>
                 </section>
                 <section class="version-highlight">
                   <span class="version-highlight-number">06</span>

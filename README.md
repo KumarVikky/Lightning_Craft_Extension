@@ -1,49 +1,42 @@
 # Lightning Craft
 
-**Lightning Craft is a Chrome extension that brings common Salesforce data, metadata, and developer workflows into one focused workspace.** It opens from supported Salesforce pages, works with the Salesforce session already active in Chrome, and helps developers and admins move from context to action without repeatedly changing tools.
+Lightning Craft is a Chrome extension that brings Salesforce data, metadata, deployment, REST, and developer workflows into one focused workspace. It opens from supported Salesforce pages and uses the Salesforce session already active in Chrome.
 
-> Lightning Craft connects your current Salesforce context to the work you need to do next: inspect data, query records, prepare changes, retrieve metadata, or work with source files.
+## Version 1.2 highlights
 
-## What you can do
-
-- **Launch from Salesforce** — Open the in-page Lightning Craft launcher to explore objects, users, organization context, and direct workspace actions.
-- **Data Export** — Browse objects and fields, create and validate SOQL, inspect paged results, and export or copy data as CSV or Excel.
-- **Data Import** — Enter, paste, or upload CSV/XLS/XLSX records; map fields, validate staged rows, and run permitted create, update, upsert, or delete operations.
-- **View records** — Inspect available fields and eligible record values in a metadata-aware data view.
-- **Retrieve metadata** — Discover components, build a package selection, generate `package.xml`, inspect available dependencies, and download a Metadata API ZIP.
-- **Use the Developer Console** — Browse supported Salesforce source, work in a Monaco-based editor, compare files or changes against the org, download metadata, and use optional local scratch files deliberately.
-
-## How it works
-
-Lightning Craft is built for a signed-in Salesforce user. It reads the active Salesforce session cookie only on supported Salesforce domains and makes requests to the Salesforce origin selected by the workflow. It does not ask for a separate Salesforce password or API token.
-
-Salesforce permissions remain in control. Object permissions, field-level security, API limits, session state, and other Salesforce controls can affect what a user can view or do.
+- **Launcher and deployment drawer:** Explore objects, users, organization details, record actions, and recent deployment activity from Salesforce pages.
+- **Data Export and Data View:** Browse metadata, build SOQL with parent and child relationship support, use Tooling API queries, inspect results, and export or copy data.
+- **Data Import:** Stage CSV, Excel, pasted, or manual records; map fields, validate rows, review mappings, and run permitted create, update, upsert, or delete operations.
+- **Metadata Export:** Discover components, review dependencies, generate `package.xml`, track retrieval activity, and download Metadata API ZIP packages.
+- **Metadata Import:** Stage a ZIP, inspect package contents, choose deployment options, validate, deploy, and Quick Deploy eligible validations.
+- **Deployment History:** Review org deployment status, component outcomes, tests, errors, completion timing, and the distinction between Validate and Deploy requests.
+- **REST Explorer:** Call Salesforce REST resources or approved external HTTPS endpoints; configure request details, inspect formatted responses, and copy or download results.
+- **Developer Console:** Explore and edit source, compare files, run Anonymous Apex and tests, analyze logs, execute SOQL, copy JSON results, and parse JSON into Apex wrapper classes.
 
 ## Install Lightning Craft
 
 1. Open the [Lightning Craft Chrome Web Store listing](https://chromewebstore.google.com/detail/cenbodcbondlhgnpifnpkpooghojfcen?utm_source=item-share-cp).
 2. Select **Add to Chrome**, then confirm with **Add extension**.
 3. Sign in to a supported Salesforce domain in the same Chrome profile.
-4. Open the Lightning Craft launcher from the right side of the Salesforce page.
+4. Open the Lightning Craft drawer from the right side of the Salesforce page.
 
 ## Privacy at a glance
 
-- Workspace preferences, query history, mappings, saved package configurations, and enabled Local Files are stored locally in the browser.
-- Uploaded files and pasted data are handled only when a user initiates an import or related action.
-- Salesforce data is requested from the active Salesforce org; the default architecture does not require a separate remote proxy.
+- Workspace preferences, query history, mappings, saved package configurations, and Local Files remain in browser-local extension storage.
+- Files and pasted data are processed only when you initiate the related workflow.
+- Salesforce requests use the active session. REST Explorer can request optional access to an external HTTPS host only when you choose that target.
 - Lightning Craft does not sell Salesforce information or use it for advertising.
 
 Read the full [Privacy Policy](privacy.html).
 
 ## Documentation site
 
-This repository contains the public Lightning Craft product site, screenshots, feature guide, support information, and privacy policy.
-
 | Page | Purpose |
 | --- | --- |
 | [Overview](index.html) | Product introduction and key workflows |
-| [Features](features.html) | Detailed feature walkthrough and screenshot gallery |
-| [Guide & support](support.html) | Installation, troubleshooting, and usage guidance |
+| [Features](features.html) | Current feature walkthrough and screenshot gallery |
+| [Guide & support](support.html) | Installation, troubleshooting, and workflow guidance |
+| [Version history](version-history.html) | Version 1.2 release notes |
 | [Privacy policy](privacy.html) | Data handling and Chrome permission details |
 
 ## Local preview
@@ -58,12 +51,10 @@ Open the local address printed by `serve`.
 
 ## Publish to GitHub Pages
 
-1. Push this public repository to its `master` branch.
-2. In GitHub, open **Settings → Pages** and select **GitHub Actions** as the source.
-3. The included workflow at `.github/workflows/deploy-documentation.yml` publishes the site.
+Push the repository to its publishing branch. The workflow in `.github/workflows/deploy-documentation.yml` publishes the site to GitHub Pages.
 
-The expected site URL is `https://kumarvikky.github.io/Lightning_Craft_Extension/`.
+Expected URL: `https://kumarvikky.github.io/Lightning_Craft_Extension/`.
 
-## Report a bug or request help
+## Support
 
-Please use [GitHub Issues](https://github.com/KumarVikky/Lightning_Craft_Extension/issues). Include the workflow you used, the action you attempted, and non-sensitive error details. Do not include Salesforce session IDs, credentials, or customer data.
+Report bugs or request help through [GitHub Issues](https://github.com/KumarVikky/Lightning_Craft_Extension/issues). Include the workflow, action attempted, and non-sensitive error details. Never include Salesforce session IDs, credentials, or customer data.

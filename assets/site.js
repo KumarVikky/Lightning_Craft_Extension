@@ -1,14 +1,36 @@
 (() => {
   const documentationRepo = 'https://github.com/KumarVikky/Lightning_Craft_Extension';
   const issuesUrl = `${documentationRepo}/issues`;
+  const cleanRoutes = {
+    'index.html': './',
+    'features.html': 'features',
+    'support.html': 'support',
+    'privacy.html': 'privacy',
+    'version-history.html': 'version-history'
+  };
+  const legacyPage = Object.keys(cleanRoutes).find((page) => window.location.pathname.endsWith(`/${page}`));
+  if (legacyPage && window.history?.replaceState) {
+    const cleanPath = legacyPage === 'index.html'
+      ? window.location.pathname.slice(0, -legacyPage.length)
+      : window.location.pathname.slice(0, -legacyPage.length) + cleanRoutes[legacyPage];
+    window.history.replaceState(null, '', `${cleanPath}${window.location.search}${window.location.hash}`);
+  }
   const nav = document.querySelector('.site-nav');
   const menuButton = document.querySelector('.menu-button');
   const currentPage = document.body.dataset.page;
-  const pageLink = { home: 'index.html', features: 'features.html', support: 'support.html', privacy: 'privacy.html', 'version-history': 'version-history.html' }[currentPage];
+  const pageLink = { home: './', features: 'features', support: 'support', privacy: 'privacy', 'version-history': 'version-history' }[currentPage];
 
-  if (nav && !nav.querySelector('a[href="version-history.html"]')) {
+  document.querySelectorAll('a[href]').forEach((link) => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    const [path, hash = ''] = href.split('#');
+    if (!Object.hasOwn(cleanRoutes, path)) return;
+    link.setAttribute('href', `${cleanRoutes[path]}${hash ? `#${hash}` : ''}`);
+  });
+
+  if (nav && !nav.querySelector('a[href="version-history"]')) {
     const versionHistoryLink = document.createElement('a');
-    versionHistoryLink.href = 'version-history.html';
+    versionHistoryLink.href = 'version-history';
     versionHistoryLink.textContent = 'Version History';
     nav.insertBefore(versionHistoryLink, nav.querySelector('.nav-github'));
   }
