@@ -1,0 +1,27 @@
+/* Keep the primary workflow cards visually equal on the overview page. */
+.feature-grid.feature-grid-equal {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: none;
+}
+
+.feature-grid.feature-grid-equal .feature-card {
+  min-height: 278px;
+  cursor: pointer;
+}
+
+.feature-grid.feature-grid-equal .feature-card:focus-visible {
+  outline: 3px solid #16a2ee;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1000px) {
+  .feature-grid.feature-grid-equal {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .feature-grid.feature-grid-equal {
+    grid-template-columns: 1fr;
+  }
+}

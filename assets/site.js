@@ -1,7 +1,12 @@
 (() => {
   const documentationRepo = 'https://github.com/KumarVikky/Lightning_Craft_Extension';
   const issuesUrl = `${documentationRepo}/issues`;
-  const cleanRoutes = {
+const compactStylesheet = document.createElement('link');
+compactStylesheet.rel = 'stylesheet';
+compactStylesheet.href = 'assets/compact.css';
+document.head.append(compactStylesheet);
+
+const cleanRoutes = {
     'index.html': './',
     'features.html': 'features',
     'support.html': 'support',
@@ -20,6 +25,24 @@
   const currentPage = document.body.dataset.page;
   const pageLink = { home: './', features: 'features', support: 'support', privacy: 'privacy', 'version-history': 'version-history' }[currentPage];
 
+  if (currentPage === 'features') {
+    const featureLabels = {
+      launcher: '01 · Launcher and drawer',
+      'data-view': '02 · Data View',
+      'data-export': '03 · Data Export',
+      'data-import': '04 · Data Import',
+      'metadata-export': '05 · Metadata Export',
+      'metadata-import': '06 · Metadata Import',
+      'deployment-history': '07 · Deployment View',
+      'developer-console': '08 · Developer Console',
+      'rest-explorer': '09 · REST Explorer'
+    };
+    Object.entries(featureLabels).forEach(([sectionId, label]) => {
+      document.querySelector(`#${sectionId} .section-label`)?.replaceChildren(label);
+    });
+    document.querySelector('.screen-gallery')?.remove();
+  }
+
   document.querySelectorAll('a[href]').forEach((link) => {
     const href = link.getAttribute('href');
     if (!href) return;
@@ -27,6 +50,26 @@
     if (!Object.hasOwn(cleanRoutes, path)) return;
     link.setAttribute('href', `${cleanRoutes[path]}${hash ? `#${hash}` : ''}`);
   });
+
+  if (currentPage === 'home') {
+    document.querySelectorAll('.feature-card').forEach((card) => {
+      const destination = card.querySelector('a[href]');
+      if (!destination) return;
+      card.tabIndex = 0;
+      card.setAttribute('role', 'link');
+      card.setAttribute('aria-label', destination.textContent.trim());
+      const openDestination = (event) => {
+        if (event.target.closest('a')) return;
+        destination.click();
+      };
+      card.addEventListener('click', openDestination);
+      card.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        destination.click();
+      });
+    });
+  }
 
   if (nav && !nav.querySelector('a[href="version-history"]')) {
     const versionHistoryLink = document.createElement('a');

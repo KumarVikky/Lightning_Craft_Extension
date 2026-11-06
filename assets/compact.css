@@ -1,0 +1,135 @@
+/* Compact visual layer: keeps the documentation dense without changing its content structure. */
+:root {
+  --compact-section-space: clamp(2.75rem, 5vw, 5.25rem);
+  --compact-card-space: clamp(1.25rem, 2.25vw, 2rem);
+}
+
+html { scroll-behavior: smooth; }
+
+body { line-height: 1.48; }
+
+.site-header {
+  min-height: 74px;
+  padding: 0.75rem clamp(1rem, 4vw, 5rem);
+  gap: 1.25rem;
+}
+
+.brand { font-size: clamp(1.2rem, 1.65vw, 1.7rem); }
+.brand-mark { transform: scale(.88); }
+.site-header nav { gap: clamp(.75rem, 1.8vw, 1.65rem); }
+.site-header nav a { font-size: .97rem; padding: .45rem 0; }
+.header-actions { gap: .65rem; }
+.theme-toggle, .repo-link { min-height: 38px; padding: .5rem .85rem; font-size: .9rem; }
+
+.page-hero,
+.hero,
+.overview-hero { padding: clamp(3rem, 6vw, 5.5rem) clamp(1rem, 7vw, 8.5rem) clamp(2.75rem, 5vw, 4.75rem); }
+
+.page-hero h1,
+.hero h1,
+.overview-hero h1 { margin: .6rem 0 1rem; line-height: .98; letter-spacing: -.045em; }
+
+.page-hero > p:not(.eyebrow),
+.hero > p:not(.eyebrow),
+.overview-hero > p:not(.eyebrow) { max-width: 58rem; margin-top: 0; line-height: 1.42; }
+
+.eyebrow { margin-bottom: .45rem; font-size: .76rem; letter-spacing: .12em; }
+
+main > section:not(.page-hero):not(.hero):not(.overview-hero),
+.section,
+.feature-detail,
+.support-section { padding-top: var(--compact-section-space); padding-bottom: var(--compact-section-space); }
+
+h2 { margin: 0 0 .75rem; line-height: 1.06; letter-spacing: -.035em; }
+h3 { margin: 0 0 .55rem; line-height: 1.16; }
+p { margin: 0 0 .85rem; }
+
+.feature-grid,
+.guide-cards,
+.privacy-cards { gap: clamp(.85rem, 1.7vw, 1.3rem); }
+
+.feature-card,
+.guide-card,
+.privacy-cards article,
+.feature-detail-card,
+.permission-table { padding: var(--compact-card-space); border-radius: 1.5rem; }
+
+.feature-card,
+.guide-card,
+.privacy-cards article { min-height: 0 !important; }
+
+.feature-card .feature-number,
+.guide-card .guide-number { margin-bottom: .8rem; }
+
+.feature-card p,
+.guide-card p,
+.privacy-cards p { line-height: 1.45; }
+
+.feature-card a,
+.guide-card a { margin-top: .85rem; }
+
+.feature-detail { gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.feature-detail .feature-copy { max-width: 37rem; }
+.feature-detail .feature-copy p { line-height: 1.48; }
+.feature-detail ul { gap: .45rem; margin: 1rem 0 0; }
+.feature-detail li { line-height: 1.4; }
+.feature-detail img { border-radius: 1rem; }
+
+.policy-layout { gap: clamp(1.5rem, 4vw, 4rem); padding-top: var(--compact-section-space); padding-bottom: var(--compact-section-space); }
+.policy-content section { margin-bottom: clamp(2rem, 4vw, 3.75rem); }
+.policy-content ul { margin: .8rem 0 0; padding-left: 1.2rem; }
+.policy-content li { margin-bottom: .45rem; line-height: 1.46; }
+.policy-nav { padding: 1rem; }
+.policy-nav a { padding: .35rem 0; font-size: .92rem; }
+.permission-row { padding: .7rem .8rem; gap: 1rem; line-height: 1.4; }
+
+.site-footer { padding: clamp(2rem, 4vw, 3.5rem) clamp(1rem, 7vw, 8.5rem); gap: 1.5rem; }
+.site-footer p { margin: .45rem 0 0; }
+
+.feature-card,
+.guide-card,
+.privacy-cards article,
+.feature-detail img,
+.repo-link,
+.theme-toggle { transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease; }
+
+.feature-card:hover,
+.guide-card:hover,
+.privacy-cards article:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(22, 72, 118, .12); }
+
+.repo-link:hover,
+.theme-toggle:hover { transform: translateY(-1px); }
+
+main > section,
+.feature-card,
+.guide-card,
+.privacy-cards article {
+  animation: compact-reveal 420ms ease both;
+}
+
+.feature-card:nth-child(2), .guide-card:nth-child(2), .privacy-cards article:nth-child(2) { animation-delay: 55ms; }
+.feature-card:nth-child(3), .guide-card:nth-child(3), .privacy-cards article:nth-child(3) { animation-delay: 110ms; }
+
+@keyframes compact-reveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .site-header { min-height: 0; padding-block: .7rem; }
+  .site-header nav { gap: .8rem; }
+  .page-hero, .hero, .overview-hero { padding-top: 3rem; padding-bottom: 2.75rem; }
+}
+
+@media (max-width: 640px) {
+  .site-header { gap: .65rem; }
+  .site-header nav a { font-size: .88rem; }
+  .header-actions { width: 100%; }
+  .feature-card, .guide-card, .privacy-cards article, .feature-detail-card, .permission-table { border-radius: 1.15rem; }
+  .permission-row { grid-template-columns: 1fr; gap: .25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

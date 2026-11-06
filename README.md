@@ -1,60 +1,61 @@
-# Lightning Craft
+# Lightning Craft documentation site
 
-Lightning Craft is a Chrome extension that brings Salesforce data, metadata, deployment, REST, and developer workflows into one focused workspace. It opens from supported Salesforce pages and uses the Salesforce session already active in Chrome.
+This folder contains the public documentation site for **Lightning Craft** — a Chrome extension for focused Salesforce data, metadata, deployment, developer, and REST workflows.
 
-## Version 1.2 highlights
+## Documentation pages
 
-- **Launcher and deployment drawer:** Explore objects, users, organization details, record actions, and recent deployment activity from Salesforce pages.
-- **Data Export and Data View:** Browse metadata, build SOQL with parent and child relationship support, use Tooling API queries, inspect results, and export or copy data.
-- **Data Import:** Stage CSV, Excel, pasted, or manual records; map fields, validate rows, review mappings, and run permitted create, update, upsert, or delete operations.
-- **Metadata Export:** Discover components, review dependencies, generate `package.xml`, track retrieval activity, and download Metadata API ZIP packages.
-- **Metadata Import:** Stage a ZIP, inspect package contents, choose deployment options, validate, deploy, and Quick Deploy eligible validations.
-- **Deployment History:** Review org deployment status, component outcomes, tests, errors, completion timing, and the distinction between Validate and Deploy requests.
-- **REST Explorer:** Call Salesforce REST resources or approved external HTTPS endpoints; configure request details, inspect formatted responses, and copy or download results.
-- **Developer Console:** Explore and edit source, compare files, run Anonymous Apex and tests, analyze logs, execute SOQL, copy JSON results, and parse JSON into Apex wrapper classes.
+- **Overview** — the product introduction and workspace shortcuts.
+- **Features** — screenshots, capabilities, and direct links for every Lightning Craft workspace.
+- **Guide & support** — task-based guidance that takes readers to the relevant feature section.
+- **Privacy** — the extension's current data handling, local storage, permissions, and optional uninstall-feedback details.
+- **Version History** — release notes, including Lightning Craft 1.2.
 
-## Install Lightning Craft
+The public GitHub Pages routes are written without `.html` extensions:
 
-1. Open the [Lightning Craft Chrome Web Store listing](https://chromewebstore.google.com/detail/cenbodcbondlhgnpifnpkpooghojfcen?utm_source=item-share-cp).
-2. Select **Add to Chrome**, then confirm with **Add extension**.
-3. Sign in to a supported Salesforce domain in the same Chrome profile.
-4. Open the Lightning Craft drawer from the right side of the Salesforce page.
+- `/`
+- `/features`
+- `/support`
+- `/privacy`
+- `/version-history`
 
-## Privacy at a glance
+The corresponding `.html` files remain the source documents, while the route folders provide GitHub Pages-friendly clean URLs.
 
-- Workspace preferences, query history, mappings, saved package configurations, and Local Files remain in browser-local extension storage.
-- Files and pasted data are processed only when you initiate the related workflow.
-- Salesforce requests use the active session. REST Explorer can request optional access to an external HTTPS host only when you choose that target.
-- Lightning Craft does not sell Salesforce information or use it for advertising.
+## Current product coverage
 
-Read the full [Privacy Policy](privacy.html).
+Lightning Craft 1.2 documents the following workspaces:
 
-## Documentation site
+1. **Launcher** — opens from Salesforce, recognizes the active context, and provides organization, object, user, and workspace access.
+2. **Data View** — detects the current Salesforce record/object, shows record data and metadata, and supports eligible edits, cloning, and modification workflows.
+3. **Data Export** — browse objects and fields, build relationship-aware SOQL, view results, copy or export data, and use Tooling API when selected.
+4. **Data Import** — stage manual, pasted, CSV, or Excel data; map fields; validate; and execute controlled CRUD operations.
+5. **Metadata Export** — discover metadata, build `package.xml`, inspect dependencies, save package selections, and retrieve a Metadata API ZIP.
+6. **Metadata Import** — stage a Metadata API ZIP, validate or deploy it, inspect component/test results, and use a short-lived local restore snapshot.
+7. **Deployment View** — review the org's metadata deployment and validation history, progress, component errors, and test outcomes.
+8. **Developer Console** — edit Salesforce source, compare files, run SFDX-style commands, execute SOQL, copy relationship-aware JSON, inspect JSON trees, and generate Apex wrapper classes.
+9. **REST Explorer** — send Salesforce REST requests or explicitly approved external HTTPS requests, inspect responses, and save reusable request shapes.
 
-| Page | Purpose |
-| --- | --- |
-| [Overview](index.html) | Product introduction and key workflows |
-| [Features](features.html) | Current feature walkthrough and screenshot gallery |
-| [Guide & support](support.html) | Installation, troubleshooting, and workflow guidance |
-| [Version history](version-history.html) | Version 1.2 release notes |
-| [Privacy policy](privacy.html) | Data handling and Chrome permission details |
+## Screenshots
+
+Screenshots are stored in [`Lightning Craft Screenshots`](Lightning%20Craft%20Screenshots/). Keep new images optimized and use URL-encoded paths whenever they are referenced from HTML.
+
+## Privacy summary
+
+Lightning Craft uses the Salesforce session already active in Chrome and does not ask for a separate Salesforce password or API token. Data is requested from Salesforce only for actions selected by the user.
+
+The extension stores selected workspace information locally in Chrome storage, browser storage, and IndexedDB. This can include preferences, queries, mappings, local files, saved request shapes, debug-log workspaces, and temporary Metadata Import restore backups. Deployment ZIP backups are pruned after 24 hours. Sensitive REST headers — `Authorization`, `Proxy-Authorization`, `X-API-Key`, and `Cookie` — are not retained in saved request shapes.
+
+REST Explorer permits an external request only after the user supplies an HTTPS endpoint and approves the optional origin permission; HTTP endpoints are rejected. Lightning Craft does not sell Salesforce data or use it for advertising or behavioral profiling. See the full [Privacy page](privacy.html) for complete details.
 
 ## Local preview
 
-This is a static site. From this directory, run:
+Open `index.html` with a local static server from this folder, for example:
 
-```powershell
+```bash
 npx serve .
 ```
 
-Open the local address printed by `serve`.
+Then verify both the source and clean paths, such as `/features.html` and `/features/`, before publishing.
 
-## Publish to GitHub Pages
+## Contributing documentation
 
-Push the repository to its publishing branch. The workflow in `.github/workflows/deploy-documentation.yml` publishes the site to GitHub Pages.
-
-Expected URL: `https://kumarvikky.github.io/Lightning_Craft_Extension/`.
-
-## Support
-
-Report bugs or request help through [GitHub Issues](https://github.com/KumarVikky/Lightning_Craft_Extension/issues). Include the workflow, action attempted, and non-sensitive error details. Never include Salesforce session IDs, credentials, or customer data.
+Keep feature copy consistent with the extension implementation in the parent project. When a workflow, permission, storage behavior, or screenshot changes, update the relevant feature page, the privacy page where applicable, version history, and this README together.
