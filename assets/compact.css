@@ -21,7 +21,16 @@ body { line-height: 1.48; }
 .site-nav { gap: clamp(.8rem, 1.65vw, 1.45rem); }
 .site-nav > a:not(.nav-github) { padding-block: 1rem; }
 .site-nav > a:not(.nav-github)::after { bottom: .55rem; }
-.nav-github { padding: .45rem .75rem; }
+.site-nav .nav-github {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .48rem .72rem;
+  font-size: .74rem;
+  line-height: 1.15;
+  letter-spacing: -.015em;
+  white-space: nowrap;
+}
 .header-actions { gap: .65rem; }
 .theme-toggle, .repo-link { min-height: 38px; padding: .5rem .85rem; font-size: .9rem; }
 
