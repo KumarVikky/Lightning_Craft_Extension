@@ -36,7 +36,7 @@ Lightning Craft 1.2 documents the following workspaces:
 
 ## Screenshots
 
-Screenshots are stored in [`Lightning Craft Screenshots`](Lightning%20Craft%20Screenshots/). Keep new images optimized and use URL-encoded paths whenever they are referenced from HTML.
+Screenshots are stored in [`images`](images/). Keep new images optimized and use URL-encoded paths whenever they are referenced from HTML.
 
 ## Privacy summary
 
