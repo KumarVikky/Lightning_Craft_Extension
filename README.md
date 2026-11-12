@@ -8,7 +8,7 @@ This folder contains the public documentation site for **Lightning Craft** — a
 - **Features** — screenshots, capabilities, and direct links for every Lightning Craft workspace.
 - **Guide & support** — task-based guidance that takes readers to the relevant feature section.
 - **Privacy** — the extension's current data handling, local storage, permissions, and optional uninstall-feedback details.
-- **Version History** — release notes, including Lightning Craft 1.2.
+- **Version History** — release notes, including Lightning Craft 1.3.
 
 The public GitHub Pages routes are written without `.html` extensions:
 
@@ -22,15 +22,15 @@ The corresponding `.html` files remain the source documents, while the route fol
 
 ## Current product coverage
 
-Lightning Craft 1.2 documents the following workspaces:
+Lightning Craft 1.3 documents the following workspaces:
 
-1. **Launcher** — opens from Salesforce, recognizes the active context, and provides organization, object, user, and workspace access.
+1. **Launcher** — opens from Salesforce, recognizes the active context, provides organization, object, user, and workspace access, and includes Salesforce Trust release/maintenance links plus confirmed debug-log cleanup actions.
 2. **Data View** — detects the current Salesforce record/object, shows record data and metadata, and supports eligible edits, cloning, and modification workflows.
 3. **Data Export** — browse objects and fields, build relationship-aware SOQL, view results, copy or export data, and use Tooling API when selected.
 4. **Data Import** — stage manual, pasted, CSV, or Excel data; map fields; validate; and execute controlled CRUD operations.
 5. **Metadata Export** — discover metadata, build `package.xml`, inspect dependencies, save package selections, and retrieve a Metadata API ZIP.
 6. **Metadata Import** — stage a Metadata API ZIP, validate or deploy it, inspect component/test results, and use a short-lived local restore snapshot.
-7. **Deployment View** — review the org's metadata deployment and validation history, progress, component errors, and test outcomes.
+7. **Deployment View** — review the org's metadata deployment and validation history, progress, component errors, and test outcomes in resizable, internally scrollable tables with progressive loading and per-table CSV copy actions.
 8. **Developer Console** — edit Salesforce source, compare files, run SFDX-style commands, execute SOQL, copy relationship-aware JSON, inspect JSON trees, and generate Apex wrapper classes.
 9. **REST Explorer** — send Salesforce REST requests or explicitly approved external HTTPS requests, inspect responses, and save reusable request shapes.
 
